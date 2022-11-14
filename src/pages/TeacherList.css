@@ -1,0 +1,33 @@
+@import "../base.css";
+
+.teacher-container {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #181818;
+}
+
+.teacher-title {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.search-teacher-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.search-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+#search-input {
+  width: 300px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #181818;
+}
