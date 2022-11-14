@@ -1,26 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./TeacherCard.css";
-import axios from "axios";
 
-function TeacherCard() {
-  const [teachers, setTeachers] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("https://634a01375df95285140a732e.mockapi.io/teachers")
-      .then((res) => {
-        setTeachers(res.data);
-
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
-
+function TeacherCard({ data }) {
   return (
     <div className="wrapper-list-teacher">
-      {teachers.map((item) => (
+      {data.map((item) => (
         <div className="card-wrapper" key={item.id}>
           <div className="teacher-profile">
             <img
