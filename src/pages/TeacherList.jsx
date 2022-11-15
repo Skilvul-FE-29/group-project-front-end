@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TeacherList.css";
 import TeacherCard from "../components/list-teacher/TeacherCard";
-import Navbar from "../components/navbar/Navbar";
+// import Navbar from "../components/navbar/Navbar";
 import axios from "axios";
 
 function TeacherList() {
@@ -31,7 +31,7 @@ function TeacherList() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="teacher-container">
         <h1 className="teacher-title">Daftar Pengajar</h1>
         <div className="search-teacher-wrapper">
