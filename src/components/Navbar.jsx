@@ -4,7 +4,7 @@ import '../styles/navbar.css'
 
 function Navbar() {
 
-  const [isToggle, setToggle] = useState(false);
+  const [isToggle, setToggle] = useState(true);
   const handleToggle = () => {
     setToggle(!isToggle);
   }
