@@ -53,6 +53,13 @@ nav {
     color: var(--orange);
 }
 
+.nav-menu>li:last-child>a {
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: var(--orange);
+    color: var(--hijau-tua);
+}
+
 .hamburger {
     width: 48px;
     height: 32px;
@@ -81,4 +88,30 @@ nav {
 
 .hamburger.active span:nth-child(3) {
     transform: rotate(-45deg) translateY(-4px) translateX(8px);
+}
+
+@media only screen and (min-width: 1080px) {
+    nav {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    .nav-menu {
+        position: static;
+        background-color: var(--hijau-tua);
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+        padding: 0;
+    }
+
+    .nav-menu>li>a {
+        position: relative;
+        display: inline;
+        padding: 0;
+    }
 }
