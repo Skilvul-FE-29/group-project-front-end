@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./TeacherList.css";
 import TeacherCard from "../components/list-teacher/TeacherCard";
-// import Navbar from "../components/navbar/Navbar";
+import Navbar from "../components/Navbar";
 import axios from "axios";
 
 function TeacherList() {
