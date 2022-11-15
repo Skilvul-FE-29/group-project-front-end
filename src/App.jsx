@@ -1,10 +1,13 @@
-// import Navbar from "./components/navbar/Navbar";
-import TeacherList from "./pages/TeacherList";
+import Navbar from "./components/navbar/Navbar";
+// import TeacherList from "./pages/TeacherList";
+import RequestList from "./pages/RequestList";
 
 function App() {
   return (
     <div className="App">
-      <TeacherList />
+      <Navbar />
+      {/* <TeacherList /> */}
+      <RequestList />
     </div>
   );
 }
