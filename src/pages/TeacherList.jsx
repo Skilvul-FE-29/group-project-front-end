@@ -31,7 +31,7 @@ function TeacherList() {
 
   return (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className="teacher-container">
         <h1 className="teacher-title">Daftar Pengajar</h1>
         <div className="search-teacher-wrapper">
