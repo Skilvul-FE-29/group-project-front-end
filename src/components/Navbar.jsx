@@ -17,8 +17,8 @@ function Navbar() {
       <ul className={isToggle ? "nav-menu" : "nav-menu active"}>
         <li><Link to="/">Pesan Les</Link></li>
         <li><Link to="/">Daftar Pesanan</Link></li>
-        <li><Link to="/">Login</Link></li>
-        <li><Link to="/">Register</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/regis">Register</Link></li>
       </ul>
       <div onClick={handleToggle} className={isToggle ? "hamburger" : "hamburger active"}>
         <span></span>
