@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import DetailRequest from "../components/requestlist/DetailRequest";
-import "./RequestList.css";
+import DetailRequest from "../components/DetailRequest";
+import "../styles/RequestList.css";
 
 function RequestList() {
   const [show, setShow] = useState(false);
