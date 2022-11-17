@@ -7,6 +7,7 @@ import Regispage from "./pages/Regispage";
 import TeacherList from "./pages/TeacherList";
 import RequestList from "./pages/RequestList";
 import Schedule from "./pages/Schedule";
+import OrderForm from "./pages/OrderForm";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="/teacher" element={<TeacherList />}></Route>
           <Route path="/request" element={<RequestList />}></Route>
           <Route path="/schedule" element={<Schedule />}></Route>
+          <Route path="/order-form" element={<OrderForm />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
