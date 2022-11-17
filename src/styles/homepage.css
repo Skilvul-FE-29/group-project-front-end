@@ -63,6 +63,7 @@
     .homepage-container {
         flex-direction: row;
         justify-content: space-around;
+        height: 560px;
     }
 
     .homepage-desc {
@@ -89,6 +90,7 @@
     }
 
     .homepage-img {
-        width: 35%;
+        width: 30%;
+        bottom: -50px;
     }
 }
