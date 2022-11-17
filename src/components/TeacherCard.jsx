@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import "./TeacherCard.css";
+// import React, { useEffect, useState } from "react";
+import "../styles/TeacherCard.css";
 
 function TeacherCard({ data }) {
   return (

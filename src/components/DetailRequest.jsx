@@ -1,5 +1,5 @@
 import React from "react";
-import "./DetailRequest.css";
+import "../styles/DetailRequest.css";
 
 function DetailRequest({ setOpenModal }) {
   return (
