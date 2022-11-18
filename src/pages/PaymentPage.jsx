@@ -37,7 +37,7 @@ const PaymentPage = () => {
             </div>
             <div className="card">
                 <div className="card-payment">
-                    <img src={dana} alt=""/>
+                    <img src={dana} alt="" className='img-payment'/>
                     <div className="info-payment">
                         <p className='p-title'>DANA</p>
                         <p className='p-title'>089990990876</p>
@@ -45,7 +45,7 @@ const PaymentPage = () => {
                     </div>
                 </div>
                 <div className="card-payment">
-                        <img src={linkaja} alt=""/>
+                        <img src={linkaja} alt="" className='img-payment'/>
                         <div className="info-payment">
                             <p className='p-title'>LINK AJA</p>
                             <p className='p-title'>089990990876</p>
