@@ -1,0 +1,115 @@
+.payment {
+  display: flex;
+}
+
+.left {
+  position: relative;
+  z-index: 1;
+  background: var(--orange);
+  width: 30%;
+  padding: 32px;
+  margin: 2rem 0 2rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.name,
+.class-name,
+.mentor,
+.sum-peserta {
+  margin-bottom: 12px;
+}
+
+.right {
+  position: relative;
+  z-index: 1;
+  background: var(--cream);
+  width: 70%;
+  padding: 32px;
+  margin: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-payment {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  width: 70%;
+  padding: 32px;
+  margin: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+.info-payment {
+    margin-left: 36px;
+}
+
+img {
+  height: 50px;
+}
+
+.title-h1 {
+  font-size: 28px;
+  text-align: center;
+}
+
+.title-p {
+  font-size: 16px;
+  text-align: center;
+  color: #6e6c6c;
+}
+
+.form-bukti {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-bukti {
+  position: relative;
+  z-index: 1;
+  background: #fff;
+  width: 70%;
+  padding: 36px;
+  margin: 2rem;
+  border: 2px solid var(--orange);
+}
+
+input[type="file"] {
+        /* position: absolute; */
+        z-index: -1;
+        top: 10px;
+        left: 8px;
+        font-size: 17px;
+        color: #b8b8b8;
+        border: 2px solid var(--orange);
+      }
+
+.btn-bayar {
+  border: 2px solid var(--orange);
+  background-color: var(--orange);
+  /* color: var(--cream); */
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+ 
