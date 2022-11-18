@@ -8,6 +8,7 @@ import TeacherList from "./pages/TeacherList";
 import RequestList from "./pages/RequestList";
 import Schedule from "./pages/Schedule";
 import OrderForm from "./pages/OrderForm";
+import PaymentPage from "./pages/PaymentPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/request" element={<RequestList />}></Route>
           <Route path="/schedule" element={<Schedule />}></Route>
           <Route path="/order-form" element={<OrderForm />}></Route>
+          <Route path="/payment" element={<PaymentPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
