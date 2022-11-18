@@ -26,20 +26,20 @@ const Loginpage = () => {
   };
 
   return (
-    <div class="container" id="login">
-      <div class="login__left">
+    <div className="container" id="login">
+      <div className="login__left">
         <img src={img} alt="" />
       </div>
 
-      <div class="login__right">
-        <div class="login__right-header">
+      <div className="login__right">
+        <div className="login__right-header">
           <h1>Masuk</h1>
         </div>
 
-        <div class="login__right-form">
+        <div className="login__right-form">
           <form action="" id="form" onSubmit={handleSubmit}>
-            <div class="form__group">
-              <label for="user_email">Email</label>
+            <div className="form__group">
+              <label htmlFor="user_email">Email</label>
               <input
                 type="text"
                 name="email"
@@ -50,8 +50,8 @@ const Loginpage = () => {
               />
             </div>
 
-            <div class="form__group">
-              <label for="user_password">Password</label>
+            <div className="form__group">
+              <label htmlFor="user_password">Password</label>
               <input
                 type="text"
                 name="password"
@@ -62,15 +62,15 @@ const Loginpage = () => {
               />
             </div>
 
-            <div class="form__group">
-              <button type="submit" name="register" class="btn" id="btn-login">
+            <div className="form__group">
+              <button type="submit" name="register" className="btn" id="btn-login">
                 login
               </button>
             </div>
           </form>
         </div>
 
-        <div class="register__right-footer">
+        <div className="register__right-footer">
           <p>
             Belum mempunyai akun? <Link to="/regis">Register</Link>
           </p>
