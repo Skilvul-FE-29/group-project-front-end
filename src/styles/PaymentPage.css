@@ -61,7 +61,7 @@ h2 {
     margin-left: 36px;
 }
 
-img {
+.img-payment {
   height: 50px;
 }
 
@@ -136,7 +136,7 @@ input[type="file"] {
         width: 90%;
     }
 
-    img {
+    .img-payment {
         height: 32px;
       }
 
