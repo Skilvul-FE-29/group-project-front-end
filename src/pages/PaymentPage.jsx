@@ -39,17 +39,17 @@ const PaymentPage = () => {
                 <div className="card-payment">
                     <img src={dana} alt=""/>
                     <div className="info-payment">
-                        <p>DANA</p>
-                        <p>089990990876</p>
-                        <p>A/N. Putri Dresty</p>
+                        <p className='p-title'>DANA</p>
+                        <p className='p-title'>089990990876</p>
+                        <p className='p-title'>A/N. Putri Dresty</p>
                     </div>
                 </div>
                 <div className="card-payment">
                         <img src={linkaja} alt=""/>
                         <div className="info-payment">
-                            <p>LINK AJA</p>
-                            <p>089990990876</p>
-                            <p>A/N. Putri Dresty</p>
+                            <p className='p-title'>LINK AJA</p>
+                            <p className='p-title'>089990990876</p>
+                            <p className='p-title'>A/N. Putri Dresty</p>
                         </div>
                     </div>
                 <form action="" className='form-bukti'>
