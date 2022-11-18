@@ -5,17 +5,17 @@ import "../styles/regispage.css";
 
 const Regispage = () => {
   return (
-    <div class="container" id="register">
-      <div class="register__left">
+    <div className="container" id="register">
+      <div className="register__left">
         <img src={img} alt="" />
       </div>
-      <div class="register__right">
-        <div class="register__right-header">
+      <div className="register__right">
+        <div className="register__right-header">
           <h1>Buat Akun Baru</h1>
         </div>
-        <div class="register__right-form" onsubmit="validate()">
+        <div className="register__right-form" onsubmit="validate()">
           <form id="form">
-            <div class="form__group">
+            <div className="form__group">
               <label for="name">Nama Lengkap</label>
               <input
                 type="text"
@@ -25,7 +25,7 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="email">Email</label>
               <input
                 type="email"
@@ -35,7 +35,7 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="password">Password</label>
               <input
                 type="password"
@@ -45,7 +45,7 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="confirmPassword">Konfirmasi Password</label>
               <input
                 type="password"
@@ -55,7 +55,7 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="education">Jenjang Pendidikan</label>
               <select name="education" id="education">
                 <option value="SD">SD</option>
@@ -64,7 +64,7 @@ const Regispage = () => {
               </select>
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="address">Alamat Lengkap</label>
               <input
                 name="address"
@@ -75,7 +75,7 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
+            <div className="form__group">
               <label for="school">Asal Sekolah</label>
               <input
                 type="text"
@@ -85,14 +85,14 @@ const Regispage = () => {
               />
             </div>
 
-            <div class="form__group">
-              <button type="submit" name="register" class="btn" id="btn-submit">
+            <div className="form__group">
+              <button type="submit" name="register" className="btn" id="btn-submit">
                 Register
               </button>
             </div>
           </form>
         </div>
-        <div class="register__right-footer">
+        <div className="register__right-footer">
           <p>
             Sudah mempunyai akun? <Link to="/login">Login</Link>
           </p>
