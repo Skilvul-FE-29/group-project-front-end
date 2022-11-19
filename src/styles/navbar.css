@@ -34,6 +34,7 @@ nav {
 .nav-menu.active {
     display: block;
     text-align: center;
+    border-bottom: 2px solid var(--orange);
 }
 
 .nav-menu>li>a {
@@ -61,6 +62,32 @@ nav {
     border-radius: 8px;
     background-color: var(--orange);
     color: var(--hijau-tua);
+}
+
+.nav-menu .profile-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.nav-menu .profile-img img {
+    width: 40px;
+}
+
+.profile-img .log-out {
+    background-color: var(--orange);
+    border-radius: 8px;
+    position: fixed;
+    color: var(--hijau-tua);
+    padding: 8px 16px;
+    top: 280px;
+    font-weight: 600;
+    transition: all ease-in 0.2s;
+}
+
+.profile-img .log-out:hover {
+    color: white;
 }
 
 .hamburger {
@@ -114,6 +141,7 @@ nav {
     }
 
     .nav-menu.active {
+        border-bottom: none;
         display: flex;
         text-align: center;
     }
@@ -136,5 +164,13 @@ nav {
         border-radius: 8px;
         background-color: var(--orange);
         color: var(--hijau-tua);
+    }
+
+    .nav-menu .profile-img {
+        width: 40px;
+    }
+
+    .profile-img .log-out {
+        top: 80px;
     }
 }

@@ -2,9 +2,7 @@ import React, { useState, useEffect } from "react";
 import img from "../images/regisimg.png";
 import "../styles/loginpage.css";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
 import axios from "axios";
-import { userIn } from "../redux/action/userAction";
 
 const Loginpage = () => {
   const [email, setemail] = useState("");
@@ -12,7 +10,6 @@ const Loginpage = () => {
   const [listUser, setListUser] = useState({})
   const [data, setData] = useState({});
 
-  const dispatch = useDispatch()
   const navigation = useNavigate();
 
   const handleSubmit = (e) => {
@@ -35,8 +32,10 @@ const Loginpage = () => {
       searchRes = listUser.filter(user => user.email == email && user.password == password)[0]
     }
     if (searchRes != null) {
-      dispatch(userIn(searchRes));
+      localStorage.setItem('logged_user', JSON.stringify(searchRes))
+      localStorage.setItem('isLoggedIn', true)
       navigation('/')
+      window.location.reload();
     } else {
       alert("password salah")
     }
