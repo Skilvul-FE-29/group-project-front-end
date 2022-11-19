@@ -3,6 +3,8 @@ import img from "../images/regisimg.png";
 import "../styles/loginpage.css";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { userIn } from "../redux/action/userAction";
 
 const Loginpage = () => {
   const [email, setemail] = useState("");
@@ -11,6 +13,7 @@ const Loginpage = () => {
   const [data, setData] = useState({});
 
   const navigation = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -34,8 +37,8 @@ const Loginpage = () => {
     if (searchRes != null) {
       localStorage.setItem('logged_user', JSON.stringify(searchRes))
       localStorage.setItem('isLoggedIn', true)
+      dispatch(userIn(searchRes))
       navigation('/')
-      window.location.reload();
     } else {
       alert("password salah")
     }

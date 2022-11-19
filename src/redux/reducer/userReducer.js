@@ -1,17 +1,16 @@
 import { USER_IN, USER_OUT } from "../action/userAction";
 
 const initialState = {
-    user: {},
-    isLogin: false,
+    user: JSON.parse(localStorage.getItem("logged_user")),
+    isLogin: JSON.parse(localStorage.getItem("isLoggedIn")),
 }
 
 function userReducer(state = initialState, action) {
     switch(action.type) {
         case USER_IN:
             return {
-                user: action.user,
-                isLogin: true
-
+                user: JSON.parse(localStorage.getItem("logged_user")),
+                isLogin: JSON.parse(localStorage.getItem("isLoggedIn"))
             }
         case USER_OUT:
             return {

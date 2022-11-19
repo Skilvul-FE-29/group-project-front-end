@@ -2,19 +2,22 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import '../styles/navbar.css'
 import ProfileIcon from '../images/user-icon.svg'
+import { useDispatch, useSelector } from "react-redux";
+import { userOut } from "../redux/action/userAction";
 
 function Navbar() {
 
   const [isToggle, setToggle] = useState(true);
   const [toggleLogOut, setToggleLogOut] = useState(false);
-  const [isLogin, setIsLogin] = useState(false);
 
-  useEffect(() => {
-    setIsLogin(JSON.parse(localStorage.getItem("isLoggedIn")));
-  }, [isLogin]);
+  const { user, isLogin } = useSelector(state => state)
+  const dispatch = useDispatch();
+
+
 
   const handleToggle = () => {
     setToggle(!isToggle);
+    console.log(user)
   }
 
   const resetToggle = () => {
@@ -32,8 +35,7 @@ function Navbar() {
   const handleLogOut = () => {
     localStorage.setItem('logged_user', null)
     localStorage.setItem('isLoggedIn', false)
-    setIsLogin(false)
-    window.location.reload();
+    dispatch(userOut())
   }
 
   return (
@@ -44,7 +46,6 @@ function Navbar() {
       <ul className={isToggle ? "nav-menu" : "nav-menu active"}>
         <li><Link to="/" onClick={resetToggle}>Pesan Les</Link></li>
         <li><Link to="/" onClick={resetToggle}>Daftar Pesanan</Link></li>
-        <li>{isLogin}</li>
         {
           isLogin ?
             <li className="profile-img">
