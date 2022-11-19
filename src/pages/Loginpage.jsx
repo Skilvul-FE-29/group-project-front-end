@@ -24,7 +24,7 @@ const Loginpage = () => {
   };
 
   useEffect(() => {
-    axios("https://634a01375df95285140a732e.mockapi.io/users").then((res) => {
+    axios.get("https://634a01375df95285140a732e.mockapi.io/users").then((res) => {
       setListUser(res.data)
     });
   }, []);
@@ -72,7 +72,7 @@ const Loginpage = () => {
             <div className="form__group">
               <label htmlFor="user_password">Password</label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 id="user_password"
                 placeholder="Masukkan password"
