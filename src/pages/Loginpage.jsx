@@ -1,29 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import img from "../images/regisimg.png";
 import "../styles/loginpage.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { userIn } from "../redux/action/userAction";
 
 const Loginpage = () => {
-  const [username, setUsername] = useState("");
+  const [email, setemail] = useState("");
   const [password, setPassword] = useState("");
+  const [listUser, setListUser] = useState({})
   const [data, setData] = useState({});
 
-  // const changeUsername = (e) => {
-  //     const value = (e.target.value)
-  //     setUsername(value)
-  // }
-
-  // const changePassword = (e) => {
-  //   const value = (e.target.value)
-  //   setPassword(value)
-  // }
+  const dispatch = useDispatch()
+  const navigation = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData({ username, password });
-    // console.log(data.username)
-    // console.log(data.password)
+    setData({ email, password });
+    validate()
+    setemail("")
+    setPassword("")
   };
+
+  useEffect(() => {
+    axios("https://634a01375df95285140a732e.mockapi.io/users").then((res) => {
+      setListUser(res.data)
+    });
+  }, []);
+
+  const validate = () => {
+    let searchRes = null;
+    if (email != "" && password != "") {
+      searchRes = listUser.filter(user => user.email == email && user.password == password)[0]
+    }
+    if (searchRes != null) {
+      dispatch(userIn(searchRes));
+      navigation('/')
+    } else {
+      alert("password salah")
+    }
+  }
 
   return (
     <div className="login-container" id="login">
@@ -41,12 +58,12 @@ const Loginpage = () => {
             <div className="form__group">
               <label htmlFor="user_email">Email</label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 id="user_email"
                 placeholder="Masukkan email"
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={email}
+                onChange={(e) => setemail(e.target.value)}
               />
             </div>
 
