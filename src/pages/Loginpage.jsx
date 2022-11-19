@@ -20,13 +20,13 @@ const Loginpage = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setData({username, password})
+    setData({ username, password });
     // console.log(data.username)
     // console.log(data.password)
   };
 
   return (
-    <div className="container" id="login">
+    <div className="login-container" id="login">
       <div className="login__left">
         <img src={img} alt="" />
       </div>
@@ -63,7 +63,12 @@ const Loginpage = () => {
             </div>
 
             <div className="form__group">
-              <button type="submit" name="register" className="btn" id="btn-login">
+              <button
+                type="submit"
+                name="register"
+                className="btn"
+                id="btn-login"
+              >
                 login
               </button>
             </div>
