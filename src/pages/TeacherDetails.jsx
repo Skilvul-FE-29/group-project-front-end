@@ -8,9 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 const TeacherDetails = () => {
   const dispatch = useDispatch();
-  
-  const { teachers } = useSelector((state) => state.teacher);
 
+  const { teachers } = useSelector((state) => state.teachers);
 
   useEffect(() => {
     dispatch(getTeachers());
