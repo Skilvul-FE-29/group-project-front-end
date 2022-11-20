@@ -1,13 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import '../styles/orderform.css'
 
 const OrderForm = () => {
+
+    const [userId, setUserId] = useState("")
+    const [teacherId, setTeacherId] = useState("")
+    const [biaya, setBiaya] = useState(50000)
+    const [biayaTotal, setBiayaTotal] = useState("")
+    const [jenjangMateri, setJenjangMateri] = useState("")
+    const [topik, setTopik] = useState("")
+    const [detailTopik, setDetailTopik] = useState("")
+    const [tanggal, setTanggal] = useState("")
+    const [jamMulai, setJamMulai] = useState("")
+    const [durasi, setDurasi] = useState(0)
+    const [modeBelajar, setModeBelajar] = useState("")
+    const [alamat, setAlamat] = useState("")
+    const [maps, setMaps] = useState("")
+    const [tambahan, setTambahan] = useState("")
+    const [statusBayar, setStatusBayar] = useState("")
+    const [bukti, setBukti] = useState("")
+    const [dataOrder, setDataOrder] = useState({})
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        setDataOrder({ biayaTotal, jenjangMateri, topik, detailTopik, tanggal, jamMulai, durasi, modeBelajar, alamat, maps, tambahan, statusBayar, bukti })
+        console.log(dataOrder)
+    }
+
+    useEffect(() => {
+        setBiayaTotal(biaya * (durasi / 60))
+    }, [durasi])
+
     return (
         <div className="form-order">
             <h1>Pesan Les</h1>
             <p>Yuk jadwalkan les sekarang dan mulai belajar </p>
-            <form action="" className="form-container">
+            <form action="" className="form-container" onSubmit={handleSubmit}>
                 <div className="pengajar-les">
                     <img src="" alt="foto-pengajar" />
                     <p>Albertus Handy Pramana Rendra</p>
@@ -20,23 +49,23 @@ const OrderForm = () => {
                     <p>Jenjang pendidikan</p>
 
                     <div className="input-jenjang">
-                        <input type="radio" name="pendidikan" value="SD" id="rd-sd" />
+                        <input type="radio" name="pendidikan" value="SD" id="rd-sd" checked={jenjangMateri === "SD"} onChange={(e) => { setJenjangMateri(e.target.value) }} />
                         <label htmlFor="rd-sd">SD</label>
-                        <input type="radio" name="pendidikan" value="SMP" id="rd-smp" />
+                        <input type="radio" name="pendidikan" value="SMP" id="rd-smp" checked={jenjangMateri === "SMP"} onChange={(e) => { setJenjangMateri(e.target.value) }} />
                         <label htmlFor="rd-smp">SMP</label>
-                        <input type="radio" name="pendidikan" value="SMP" id="rd-sma" />
+                        <input type="radio" name="pendidikan" value="SMA" id="rd-sma" checked={jenjangMateri === "SMA"} onChange={(e) => { setJenjangMateri(e.target.value) }} />
                         <label htmlFor="rd-sma">SMA</label>
                     </div>
 
                     <div className="input-topik">
                         <p>Topik</p>
-                        <input type="text" placeholder="Matematika" />
+                        <input type="text" placeholder="Matematika" value={topik} onChange={(e) => { setTopik(e.target.value) }} />
                     </div>
 
                     <div className="input-detail-topik">
                         <p>Detail Topik</p>
                         <textarea name="" id="detail-topik" cols="100" rows="5"
-                            placeholder="Jelaskan materi apa yang kamu ingin pelajari"></textarea>
+                            placeholder="Jelaskan materi apa yang kamu ingin pelajari" value={detailTopik} onChange={(e) => { setDetailTopik(e.target.value) }}></textarea>
                     </div>
                 </div>
 
@@ -46,18 +75,18 @@ const OrderForm = () => {
                     <div className="waktu-input">
                         <div className="waktu-top">
                             <p>Tanggal Les</p>
-                            <input type="date" id="date" />
+                            <input type="date" id="date" value={tanggal} onChange={(e) => { setTanggal(e.target.value) }} />
                         </div>
 
                         <div className="waktu-bottom">
                             <div className="mulai-container">
                                 <p>Jam Mulai</p>
-                                <input type="time" id="mulai" />
+                                <input type="time" id="mulai" value={jamMulai} onChange={(e) => { setJamMulai(e.target.value) }} />
                             </div>
 
                             <div className="durasi-container">
                                 <p>Durasi</p>
-                                <input type="number" placeholder="menit" className="durasi" />
+                                <input type="number" placeholder="menit" className="durasi" value={durasi} onChange={(e) => { setDurasi(e.target.value) }} />
                             </div>
                         </div>
                     </div>
@@ -69,26 +98,26 @@ const OrderForm = () => {
                     <h3 className="form-heading">Lokasi Les</h3>
 
                     <div className="mode-pembelajaran">
-                        <input type="radio" name="lokasi" id="rd-on" value="online" />
+                        <input type="radio" name="lokasi" id="rd-on" value="online" checked={modeBelajar === "online"} onChange={(e) => { setModeBelajar(e.target.value) }} />
                         <label htmlFor="rd-on">Online</label>
-                        <input type="radio" name="lokasi" id="rd-off" value="offline" />
+                        <input type="radio" name="lokasi" id="rd-off" value="offline" checked={modeBelajar === "offline"} onChange={(e) => { setModeBelajar(e.target.value) }} />
                         <label htmlFor="rd-off">Offline</label>
                     </div>
 
                     <div className="detail-lokasi">
                         <div className="alamat-lengkap">
                             <p>Alamat</p>
-                            <textarea name="" id="" cols="30" rows="10" placeholder="Tuliskan alamatmu selengkap mungkin"></textarea>
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Tuliskan alamatmu selengkap mungkin" value={alamat} onChange={(e) => { setAlamat(e.target.value) }}></textarea>
                         </div>
                         <label htmlFor="maps">Lokasi Maps</label>
-                        <input type="text" name="maps" placeholder="Link google maps" />
+                        <input type="text" name="maps" placeholder="Link google maps" value={maps} onChange={(e) => { setMaps(e.target.value) }} />
                     </div>
                 </div>
 
                 <div className="info-tambahan">
                     <h3 className="form-heading">Informasi Tambahan</h3>
                     <p>Catatan untuk pengajar</p>
-                    <textarea name="" id="info-tambahan" placeholder="Banyakin latihan soal ya"></textarea>
+                    <textarea name="" id="info-tambahan" placeholder="Banyakin latihan soal ya" value={tambahan} onChange={(e) => { setTambahan(e.target.value) }}></textarea>
                 </div>
                 <div className="button">
                     <Link to='/teacher' id="btn-batal">Batalkan Pesanan</Link>

@@ -10,7 +10,7 @@ function Navbar() {
   const [isToggle, setToggle] = useState(true);
   const [toggleLogOut, setToggleLogOut] = useState(false);
 
-  const { user, isLogin } = useSelector(state => state)
+  const { user, isLogin } = useSelector(state => state.user)
   const dispatch = useDispatch();
 
 
