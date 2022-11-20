@@ -1,7 +1,9 @@
 #teacher-details {
     background-color: white;
+    position: relative;
     margin: 0;
     padding: 0;
+    padding-bottom: 8px;
 }
 
 .teacher-header {
@@ -123,6 +125,7 @@
 #profil-diri h2,
 #pengalaman h2,
 #ulasan h2 {
+    text-align: left;
     margin-bottom: 8px;
 }
 
