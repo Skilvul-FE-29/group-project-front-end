@@ -5,7 +5,13 @@ function TeacherCard({ data }) {
   return (
     <div className="wrapper-list-teacher">
       {data.map((item) => (
-        <div className="card-wrapper" key={item.id}>
+        <div
+          className="card-wrapper"
+          key={item.id}
+          onClick={() => {
+            window.location.href = `/teachers/${item.id}`;
+          }}
+        >
           <div className="teacher-profile">
             <img
               src={`https://drive.google.com/uc?export=view&id=${item.foto}`}

@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import "../styles/TeacherList.css";
 import TeacherCard from "../components/TeacherCard";
-// import Navbar from "../components/Navbar";
-import axios from "axios";
+// import axios from "axios";
+// import teacherReducer from "../redux/reducer/teacherReducer";
+import { useDispatch, useSelector } from "react-redux";
+import { getTeachers } from "../redux/action/teacherAction";
 
 function TeacherList() {
   const [search, setSearch] = useState("");
-  const [teachers, setTeachers] = useState([]);
+
+  const dispatch = useDispatch();
+  const { teachers } = useSelector((state) => state.teacherReducer);
+
+  useEffect(() => {
+    dispatch(getTeachers());
+  }, []);
 
   const filterTeachers = teachers.filter((teacher) => {
     return (
@@ -15,19 +23,6 @@ function TeacherList() {
       teacher.edukasi[0].jurusan.toLowerCase().includes(search)
     );
   });
-
-  useEffect(() => {
-    axios
-      .get("https://634a01375df95285140a732e.mockapi.io/teachers")
-      .then((res) => {
-        setTeachers(res.data);
-
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
 
   return (
     <>
