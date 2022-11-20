@@ -1,122 +1,62 @@
-@import "../base.css";
-
 .order-container {
-  width: 60%;
-  margin: 30px auto 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  color: #181818;
+  padding: 24px;
+  color: var(--hijau-tua);
 }
 
 .order-title {
-  font-size: 2rem;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 16px;
 }
 
-.order-wrapper {
-  background-color: rgb(255, 255, 255);
-  padding: 2rem;
-  /* border-top-left-radius: 10px;
-  border-top-right-radius: 10px; */
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+.pesanan {
+  background-color: white;
+  padding: 24px;
+  border-radius: 16px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  margin-bottom: 16px;
 }
 
-.order-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.teacher-info .info-foto {
+  width: 96px;
+  height: 96px;
+  background-color: gray;
+  border-radius: 50%;
+  margin: auto;
 }
 
-.order-les {
-  line-height: 1;
+.teacher-info .edukasi {
+  font-size: 14px;
+  color: gray;
 }
 
-.order-les .order-les-title {
-  font-size: 1.2rem;
-  font-weight: 600;
+.urutan-pesanan {
+  font-weight: 700;
 }
 
-.order-les .order-les-date {
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: #6c7079;
+.pesanan-sub-judul {
+  font-weight: 700;
 }
 
-.order-status {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--hijau-tua);
-  padding: 10px;
-  border-radius: 50px;
-  border: 1px solid var(--hijau-tua);
-  background-color: var(--hijau-muda);
-}
-
-.order-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-a {
-  color: inherit;
-}
-
-.btn {
-  background-color: transparent;
-  border: 3px solid var(--orange);
-  border-radius: 6px;
-  margin-right: 10px;
-  padding: 0.5rem;
+.toggle-detail {
   color: var(--orange);
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  margin: 16px 0;
+  text-align: center;
 }
 
-.btn-detail-request:hover,
-.btn-detail-pelamar:hover {
-  background-color: var(--orange);
-  color: white;
+.pesanan-materi,
+.pesanan-lokasi,
+.teacher-info {
+  margin-bottom: 16px;
 }
 
-.btn-payment {
-  background-color: var(--orange);
-  border: none;
-  border-radius: 6px;
-  margin-right: 10px;
-  padding: 0.5rem;
-  color: white;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
+.teacher-info>p:first-child {
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-.btn-payment:hover {
-  opacity: 0.8;
-}
-
-@media screen and (max-width: 768px) {
-  .order-container {
-    width: 90%;
-  }
-
-  .button-left {
-    display: flex;
-    gap: 10px;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .button-left {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .btn {
-    font-size: 10px;
-  }
+.teacher-info .info-text {
+  margin-top: 8px;
 }
