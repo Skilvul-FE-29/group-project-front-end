@@ -217,6 +217,11 @@ input[type="radio"]:checked:after {
 
 .pengajar-les>p:nth-child(4) {
   text-align: center;
+  font-weight: 700;
+}
+
+.pengajar-les>p:nth-child(5) {
+  text-align: center;
 }
 
 .form-heading {
@@ -337,6 +342,10 @@ input[type="radio"]:checked:after {
   .form-order {
     width: 700px;
     margin: 24px auto 24px auto;
+  }
+
+  .pengajar-les p:nth-child(2) {
+    font-size: 24px;
   }
 
   .waktu-les>div {

@@ -1,21 +1,23 @@
-import { USER_IN, USER_OUT } from "../action/userAction";
+import { CHOOSE_TEACHER, POST_ORDER } from "../action/orderAction";
 
 const initialState = {
-    user: JSON.parse(localStorage.getItem("logged_user")),
-    isLogin: JSON.parse(localStorage.getItem("isLoggedIn")),
+    teacher: JSON.parse(localStorage.getItem('choose-teacher')),
+    order: JSON.parse(localStorage.getItem('data-order'))
 }
 
 function orderReducer(state = initialState, action) {
     switch(action.type) {
-        case USER_IN:
+        case CHOOSE_TEACHER: 
+            localStorage.setItem('choose-teacher', JSON.stringify(action.teacher))
             return {
-                user: JSON.parse(localStorage.getItem("logged_user")),
-                isLogin: JSON.parse(localStorage.getItem("isLoggedIn"))
+                ...state,
+                teacher: JSON.parse(localStorage.getItem('choose-teacher')),
             }
-        case USER_OUT:
+        case POST_ORDER:
+            localStorage.setItem('data-order', action.dataOrder)
             return {
-                user: {},
-                isLogin: false
+                ...state,
+                order: JSON.parse(localStorage.getItem('data-order'))
             }
         default: return state;
     }

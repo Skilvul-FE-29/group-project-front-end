@@ -2,11 +2,12 @@ import React, { useEffect, useState } from "react";
 import TeacherImg from "../images/teacher-sample.png";
 import Star from "../images/star.svg";
 import "../styles/teacher-details.css";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { getTeachers } from "../redux/action/teacherAction";
 import { useDispatch, useSelector } from "react-redux";
 import teacherReducer from "../redux/reducer/teacherReducer";
 import { Link } from "react-router-dom";
+import { chooseTeacher } from "../redux/action/orderAction";
 
 const TeacherDetails = () => {
 
@@ -49,7 +50,16 @@ const TeacherDetails = () => {
   }, []);
 
   const params = useParams();
-  console.log(params.id);
+  const navigation = useNavigate()
+
+  const handleChoose = (teacher) => {
+    // console.log(teacher)
+    dispatch(chooseTeacher(teacher))
+    navigation('/order-form')
+    // console.log(order.teacher)
+  }
+
+
   return (
     <>
       {teachers.map((teacher) => {
@@ -75,7 +85,7 @@ const TeacherDetails = () => {
                   </div>
                 </div>
                 <div className="header-btn">
-                  <button id="submit">Belajar dengan {teacher.nama}</button>
+                  <button id="submit" onClick={() => handleChoose(teacher)}>Belajar dengan {teacher.nama}</button>
                   <Link to='/teacher'>Lihat Pengajar Lain</Link>
                 </div>
               </section>
