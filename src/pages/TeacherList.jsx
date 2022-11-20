@@ -10,7 +10,7 @@ function TeacherList() {
   const [search, setSearch] = useState("");
 
   const dispatch = useDispatch();
-  const { teachers } = useSelector((state) => state.teacherReducer);
+  const { teachers } = useSelector((state) => state.teachers);
 
   useEffect(() => {
     dispatch(getTeachers());
