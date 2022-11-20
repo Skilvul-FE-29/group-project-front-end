@@ -61,6 +61,10 @@
   margin-top: 8px;
 }
 
+.teacher-info .edukasi {
+  margin: auto;
+}
+
 @media only screen and (min-width: 1080px) {
   .order-container {
     width: 480px;

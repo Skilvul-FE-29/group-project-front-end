@@ -13,8 +13,6 @@ function Navbar() {
   const { user, isLogin } = useSelector(state => state.user)
   const dispatch = useDispatch();
 
-
-
   const handleToggle = () => {
     setToggle(!isToggle);
     console.log(user)
@@ -44,8 +42,8 @@ function Navbar() {
         <p className="nav-logo">Ajarin</p>
       </Link>
       <ul className={isToggle ? "nav-menu" : "nav-menu active"}>
-        <li><Link to="/" onClick={resetToggle}>Pesan Les</Link></li>
-        <li><Link to="/" onClick={resetToggle}>Daftar Pesanan</Link></li>
+        <li><Link to={isLogin ? '/teacher' : '/regis'} onClick={resetToggle}>Pesan Les</Link></li>
+        <li><Link to={isLogin ? '/request' : '/regis'} onClick={resetToggle}>Daftar Pesanan</Link></li>
         {
           isLogin ?
             <li className="profile-img">

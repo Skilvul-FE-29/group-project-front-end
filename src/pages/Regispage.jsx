@@ -34,8 +34,6 @@ const Regispage = () => {
       if (password == confirmPass) {
         const dataRegis = { nama, email, noHp, password, jenjang, alamat, sekolah }
         axios.post('https://634a01375df95285140a732e.mockapi.io/users', dataRegis).then(res => {
-          console.log(res);
-          console.log(res.data);
           localStorage.setItem('logged_user', JSON.stringify(res.data))
           localStorage.setItem('isLoggedIn', true)
           dispatch(userIn(res.data))

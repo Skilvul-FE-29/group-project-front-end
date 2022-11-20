@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import '../styles/orderform.css'
 
 const OrderForm = () => {
@@ -30,16 +30,14 @@ const OrderForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         postOrder()
-        console.log(dataOrder)
     }
+
+    const navigation = useNavigate()
 
     const postOrder = () => {
         const dataOrder = { userId, teacherId, biayaTotal, jenjangMateri, topik, detailTopik, tanggal, jamMulai, durasi, modeBelajar, alamat, maps, tambahan, statusBayar, bukti }
         axios.post('https://634a01375df95285140a732e.mockapi.io/order', dataOrder).then(res => {
-            console.log(res);
-            console.log(res.data);
-            // dispatch(userIn(res.data))
-            // navigation('/')
+            navigation('/request')
         })
     }
 
