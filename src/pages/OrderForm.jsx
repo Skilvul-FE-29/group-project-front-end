@@ -1,4 +1,6 @@
+import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import '../styles/orderform.css'
 
@@ -22,15 +24,33 @@ const OrderForm = () => {
     const [bukti, setBukti] = useState("")
     const [dataOrder, setDataOrder] = useState({})
 
+    const { teacher } = useSelector((state) => state.order)
+    const { user } = useSelector((state) => state.user)
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        setDataOrder({ biayaTotal, jenjangMateri, topik, detailTopik, tanggal, jamMulai, durasi, modeBelajar, alamat, maps, tambahan, statusBayar, bukti })
+        postOrder()
         console.log(dataOrder)
+    }
+
+    const postOrder = () => {
+        const dataOrder = { userId, teacherId, biayaTotal, jenjangMateri, topik, detailTopik, tanggal, jamMulai, durasi, modeBelajar, alamat, maps, tambahan, statusBayar, bukti }
+        axios.post('https://634a01375df95285140a732e.mockapi.io/order', dataOrder).then(res => {
+            console.log(res);
+            console.log(res.data);
+            // dispatch(userIn(res.data))
+            // navigation('/')
+        })
     }
 
     useEffect(() => {
         setBiayaTotal(biaya * (durasi / 60))
     }, [durasi])
+
+    useEffect(() => {
+        setTeacherId(teacher.id)
+        setUserId(user.id)
+    }, [])
 
     return (
         <div className="form-order">
@@ -38,9 +58,10 @@ const OrderForm = () => {
             <p>Yuk jadwalkan les sekarang dan mulai belajar </p>
             <form action="" className="form-container" onSubmit={handleSubmit}>
                 <div className="pengajar-les">
-                    <img src="" alt="foto-pengajar" />
-                    <p>Albertus Handy Pramana Rendra</p>
-                    <p>Universitas Gadjah Mada | Ilmu Komputer</p>
+                    <img src={`https://drive.google.com/uc?export=view&id=${teacher.foto}`} alt="foto-pengajar" />
+                    <p>{teacher.nama}</p>
+                    <p>{teacher.edukasi[0].lokasi} | {teacher.edukasi[0].jurusan}</p>
+                    <p>Biaya Sesi</p>
                     <p>Rp50.000 | 1 jam</p>
                 </div>
 
