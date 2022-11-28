@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../styles/Schedule.css";
 
 const Schedule = () => {
@@ -15,6 +16,11 @@ const Schedule = () => {
       <div className="schedule-container">
         <div className="sch-title">
           <h1 className="title">Daftar Sesi</h1>
+          <div className="history">
+            <Link className="history-les" to={"/history"}>
+              <h3>History Les</h3>
+            </Link>
+          </div>
         </div>
 
         <div className="sch-wrapper-card">
@@ -32,7 +38,7 @@ const Schedule = () => {
               </p>
             </div>
             <div className="sch-card-right">
-              <button className="btn-detail-sesi" onClick={handleDetails}>
+              <button className="btn-review" onClick={handleDetails}>
                 Lihat Detail Sesi
               </button>
             </div>

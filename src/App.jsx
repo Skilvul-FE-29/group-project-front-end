@@ -9,6 +9,8 @@ import RequestList from "./pages/RequestList";
 import Schedule from "./pages/Schedule";
 import OrderForm from "./pages/OrderForm";
 import PaymentPage from "./pages/PaymentPage";
+import HistoryLes from "./pages/HistoryLes";
+import ReviewPengajar from "./components/ReviewPengajar";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
           <Route path="/schedule" element={<Schedule />}></Route>
           <Route path="/order-form" element={<OrderForm />}></Route>
           <Route path="/payment" element={<PaymentPage />}></Route>
+          <Route path="/history" element={<HistoryLes />}></Route>
+          <Route path="/review" element={<ReviewPengajar />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
