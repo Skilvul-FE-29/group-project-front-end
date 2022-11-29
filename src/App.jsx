@@ -24,7 +24,7 @@ function App() {
           <Route path="/teachers/:id" element={<TeacherDetails />} />
           <Route path="/teacher" element={<TeacherList />}></Route>
           <Route path="/request" element={<RequestList />}></Route>
-          <Route path="/schedule" element={<Schedule />}></Route>
+          <Route path="/schedule/:id" element={<Schedule />}></Route>
           <Route path="/order-form" element={<OrderForm />}></Route>
           <Route path="/payment" element={<PaymentPage />}></Route>
           <Route path="/history" element={<HistoryLes />}></Route>

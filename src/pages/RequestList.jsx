@@ -8,7 +8,7 @@ import { getTeachers } from "../redux/action/teacherAction";
 
 function RequestList() {
   const [dataRequest, setDataRequest] = useState([]);
-  const [detail, setDetail] = useState(false)
+  const [detail, setDetail] = useState(false);
 
   useEffect(() => {
     axios
@@ -22,15 +22,15 @@ function RequestList() {
       });
   }, []);
 
-  const { user } = useSelector((state) => state.user)
+  const { user } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
 
   const { teachers } = useSelector((state) => state.teachers);
 
   const toggleDetail = () => {
-    setDetail(!detail)
-  }
+    setDetail(!detail);
+  };
 
   useEffect(() => {
     dispatch(getTeachers());
@@ -47,7 +47,6 @@ function RequestList() {
             urutan++;
             return (
               <div className="pesanan" key={index}>
-
                 <p className="urutan-pesanan">Pesanan #{urutan}</p>
 
                 <div className="pesanan-waktu">
@@ -57,24 +56,35 @@ function RequestList() {
                   <p className="lama">Durasi sesi: {item.durasi}</p>
                 </div>
 
-                <p onClick={toggleDetail} className="toggle-detail">{detail ? <span>Tutup Detail</span> : <span>Lihat Detail</span>}</p>
+                <p onClick={toggleDetail} className="toggle-detail">
+                  {detail ? (
+                    <span>Tutup Detail</span>
+                  ) : (
+                    <span>Lihat Detail</span>
+                  )}
+                </p>
 
-                {
-                  detail &&
-
+                {detail && (
                   <>
-
                     <div className="pesanan-materi">
                       <p className="pesanan-sub-judul">Materi Sesi</p>
-                      <p className="jenjang-materi">Jenjang materi: {item.jenjangMateri}</p>
+                      <p className="jenjang-materi">
+                        Jenjang materi: {item.jenjangMateri}
+                      </p>
                       <p className="topik-materi">Topik materi: {item.topik}</p>
-                      <p className="detail-materi">Detail materi: {item.detailTopik}</p>
-                      <p className="tambahan-materi">Tambahan: {item.tambahan}</p>
+                      <p className="detail-materi">
+                        Detail materi: {item.detailTopik}
+                      </p>
+                      <p className="tambahan-materi">
+                        Tambahan: {item.tambahan}
+                      </p>
                     </div>
 
                     <div className="pesanan-lokasi">
                       <p className="pesanan-sub-judul">Lokasi Sesi</p>
-                      <p className="mode-lokasi">Mode pembelajaran: {item.modeBelajar}</p>
+                      <p className="mode-lokasi">
+                        Mode pembelajaran: {item.modeBelajar}
+                      </p>
                       <p className="alamat-lokasi">alamat: {item.alamat}</p>
                       <p className="maps-lokasi">maps: {item.maps}</p>
                     </div>
@@ -84,20 +94,25 @@ function RequestList() {
                         return (
                           <div className="teacher-info" key={index}>
                             <p>Pengajar</p>
-                            <img src={`https://drive.google.com/uc?export=view&id=${teacher.foto}`} alt="" className="info-foto" />
+                            <img
+                              src={`https://drive.google.com/uc?export=view&id=${teacher.foto}`}
+                              alt=""
+                              className="info-foto"
+                            />
                             <div className="info-text">
                               <p className="nama">{teacher.nama}</p>
-                              <p className="edukasi">{teacher.edukasi[0].lokasi} | {teacher.edukasi[0].jurusan}</p>
+                              <p className="edukasi">
+                                {teacher.edukasi[0].lokasi} |{" "}
+                                {teacher.edukasi[0].jurusan}
+                              </p>
                             </div>
                           </div>
-                        )
+                        );
                     })}
                   </>
-                }
-
-
+                )}
               </div>
-            )
+            );
           }
         })}
       </div>
