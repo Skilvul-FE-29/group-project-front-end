@@ -27,7 +27,7 @@ function App() {
           <Route path="/schedule/:id" element={<Schedule />}></Route>
           <Route path="/order-form" element={<OrderForm />}></Route>
           <Route path="/payment" element={<PaymentPage />}></Route>
-          <Route path="/history" element={<HistoryLes />}></Route>
+          <Route path="/history/:id" element={<HistoryLes />}></Route>
           <Route path="/review" element={<ReviewPengajar />}></Route>
         </Routes>
       </BrowserRouter>

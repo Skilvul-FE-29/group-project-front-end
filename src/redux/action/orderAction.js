@@ -1,21 +1,21 @@
-import axios from "axios"
+// import axios from "axios";
 
-export const POST_ORDER = "POST_ORDER"
-export const GET_ORDER = "GET_ORDER"
-export const CHOOSE_TEACHER = "CHOOSE_TEACHER"
+export const POST_ORDER = "POST_ORDER";
+export const GET_ORDER = "GET_ORDER";
+export const CHOOSE_TEACHER = "CHOOSE_TEACHER";
 
 export function chooseTeacher(teacher) {
-    return {
-        type: CHOOSE_TEACHER,
-        teacher
-    }
+  return {
+    type: CHOOSE_TEACHER,
+    teacher,
+  };
 }
 
 export function postOrder(dataOrder) {
-    return {
-        type: POST_ORDER,
-        dataOrder
-    }
+  return {
+    type: POST_ORDER,
+    dataOrder,
+  };
 }
 
 // export function userIn() {

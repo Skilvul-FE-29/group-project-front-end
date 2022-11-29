@@ -56,6 +56,11 @@ function Navbar() {
             Jadwal Les
           </Link>
         </li>
+        <li>
+          <Link className="history-les" to={`/history/${user.id}`}>
+            History Les
+          </Link>
+        </li>
         {isLogin ? (
           <li className="profile-img">
             <img
