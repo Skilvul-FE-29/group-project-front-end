@@ -1,176 +1,176 @@
 nav {
-    position: sticky;
-    top: 0;
-    right: 0;
-    left: 0;
-    background-color: var(--hijau-tua);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 16px;
-    z-index: 10;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: var(--hijau-tua);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  z-index: 10;
 }
 
 .nav-logo {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--orange);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--orange);
 }
 
 .nav-menu {
-    position: fixed;
-    top: 80px;
-    background-color: var(--hijau-tua);
-    left: 0;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 16px 0;
-    display: none;
+  height: auto;
+  position: fixed;
+  top: 80px;
+  background-color: var(--hijau-tua);
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 0;
+  display: none;
 }
 
 .nav-menu.active {
-    display: block;
-    text-align: center;
-    border-bottom: 2px solid var(--orange);
+  display: block;
+  text-align: center;
+  border-bottom: 2px solid var(--orange);
 }
 
-.nav-menu>li>a {
-    font-weight: 600;
-    color: var(--hijau-muda);
+.nav-menu > li > a {
+  font-weight: 600;
+  color: var(--hijau-muda);
+  display: none;
+  transition: all ease-in 0.2s;
+}
+
+.nav-menu.active > li > a {
+  font-weight: 600;
+  color: var(--hijau-muda);
+  display: block;
+  padding: 16px 0;
+  cursor: pointer;
+}
+
+.nav-menu > li > a:hover {
+  color: var(--orange);
+}
+
+.nav-menu > li:last-child > a {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: var(--orange);
+  color: var(--hijau-tua);
+}
+
+.nav-menu .profile-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.nav-menu .profile-img img {
+  width: 40px;
+}
+
+.profile-img .log-out {
+  background-color: var(--orange);
+  border-radius: 8px;
+  position: fixed;
+  color: var(--hijau-tua);
+  padding: 8px 16px;
+  top: 280px;
+  font-weight: 600;
+  transition: all ease-in 0.2s;
+}
+
+.profile-img .log-out:hover {
+  color: white;
+}
+
+.hamburger {
+  width: 48px;
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.hamburger > span {
+  display: block;
+  width: 80%;
+  height: 2px;
+  background-color: var(--orange);
+  transition: all ease-in 0.2s;
+}
+
+.hamburger.active span:nth-child(2) {
+  background-color: var(--hijau-tua);
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(4px) translateX(8px);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-4px) translateX(8px);
+}
+
+@media only screen and (min-width: 1080px) {
+  nav {
+    padding-left: 64px;
+    padding-right: 64px;
+  }
+
+  .hamburger {
     display: none;
-    transition: all ease-in 0.2s;
-}
+  }
 
-.nav-menu.active>li>a {
-    font-weight: 600;
-    color: var(--hijau-muda);
-    display: block;
-    padding: 16px 0;
-    cursor: pointer;
-}
+  .nav-menu {
+    position: static;
+    background-color: var(--hijau-tua);
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    padding: 0;
+  }
 
-.nav-menu>li>a:hover {
-    color: var(--orange);
-}
+  .nav-menu.active {
+    border-bottom: none;
+    display: flex;
+    text-align: center;
+  }
 
-.nav-menu>li:last-child>a {
+  .nav-menu > li > a {
+    position: relative;
+    display: inline;
+    padding: 0;
+  }
+
+  .nav-menu.active > li > a {
+    position: relative;
+    display: inline;
+    padding: 0;
+  }
+
+  .nav-menu > li:last-child > a {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 8px;
     background-color: var(--orange);
     color: var(--hijau-tua);
-}
+  }
 
-.nav-menu .profile-img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.nav-menu .profile-img img {
+  .nav-menu .profile-img {
     width: 40px;
-}
+  }
 
-.profile-img .log-out {
-    background-color: var(--orange);
-    border-radius: 8px;
-    position: fixed;
-    color: var(--hijau-tua);
-    padding: 8px 16px;
-    top: 280px;
-    font-weight: 600;
-    transition: all ease-in 0.2s;
-}
-
-.profile-img .log-out:hover {
-    color: white;
-}
-
-.hamburger {
-    width: 48px;
-    height: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-}
-
-.hamburger>span {
-    display: block;
-    width: 80%;
-    height: 2px;
-    background-color: var(--orange);
-    transition: all ease-in 0.2s;
-}
-
-.hamburger.active span:nth-child(2) {
-    background-color: var(--hijau-tua);
-}
-
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translateY(4px) translateX(8px);
-}
-
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translateY(-4px) translateX(8px);
-}
-
-
-@media only screen and (min-width: 1080px) {
-    nav {
-        padding-left: 64px;
-        padding-right: 64px;
-    }
-
-    .hamburger {
-        display: none;
-    }
-
-    .nav-menu {
-        position: static;
-        background-color: var(--hijau-tua);
-        display: flex;
-        flex-direction: row;
-        gap: 32px;
-        padding: 0;
-    }
-
-    .nav-menu.active {
-        border-bottom: none;
-        display: flex;
-        text-align: center;
-    }
-
-    .nav-menu>li>a {
-        position: relative;
-        display: inline;
-        padding: 0;
-    }
-
-    .nav-menu.active>li>a {
-        position: relative;
-        display: inline;
-        padding: 0;
-    }
-
-    .nav-menu>li:last-child>a {
-        display: inline-block;
-        padding: 8px 16px;
-        border-radius: 8px;
-        background-color: var(--orange);
-        color: var(--hijau-tua);
-    }
-
-    .nav-menu .profile-img {
-        width: 40px;
-    }
-
-    .profile-img .log-out {
-        top: 80px;
-    }
+  .profile-img .log-out {
+    top: 80px;
+  }
 }
